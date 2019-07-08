@@ -53,6 +53,7 @@ post '/login' do
       p "invalid password"
     end
   end
+    redirect '/'
 end
 
 # Delete request
