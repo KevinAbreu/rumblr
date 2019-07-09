@@ -3,8 +3,14 @@
   <form action="/logout" method="post">
     <input type="submit" name="Submit" value="Logout">
   </form>
-  <form class="" action="index.html" method="post">
-    <input type="text" name="content" value="">
+  <form class="" action="/delete_user" method="post">
+    <input type="submit" name="" value="Delete Account">
+
+  </form>
+
+  <form class="" action="/user_post" method="post">
+    <input type="text" name="content" placeholder= "ENTER YOUR POST HERE"value="">
+    <input type="submit" name="" value="Create Post">
   </form>
 <% else %>
   <a href="login">Login</a>

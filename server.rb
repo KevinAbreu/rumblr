@@ -9,6 +9,8 @@ enable :sessions #enables cookies
 #User inherits ActiveRecord to allow the user to access the information that they made
 class User < ActiveRecord::Base
 end
+class Post < ActiveRecord::Base
+end
 
 get "/" do
   erb :home
@@ -44,11 +46,11 @@ end
 
 post '/login' do
   given_password = params[:password]
-  user = User.find_by(email:params[:email])
-  if user
-    if user.password == given_password
+  @user = User.find_by(email:params[:email])
+  if @user
+    if @user.password == given_password
       p "user authenticated successfully"
-      session[:user_id] = user.id # setting the session id to the user id
+      session[:user_id] = @user.id # setting the session id to the user id
     else
       p "invalid password"
     end
@@ -56,6 +58,25 @@ post '/login' do
     redirect '/'
 end
 
+get "/user_post" do
+  # @post = Post.find_by(content: params[:content])
+  @post= Post.find(2)
+  erb :"users/user_post"
+end
+
+post "/user_post" do
+  @post = Post.new(params)
+  if @post.save
+
+  end
+  redirect '/user_post'
+end
+
+
+
+post "/delete_user" do
+  erb :"users/delete_user"
+end
 # Delete request
 post '/logout' do
   session.clear #Look up sinatra active records methods for clear
@@ -63,3 +84,9 @@ post '/logout' do
   redirect '/'
 end
 # MVC
+
+# delete '/login' do
+#   session[:user_id] = user.id
+#   @user.destroy(session[:user_id])
+#   redirect '/logout'
+# end
