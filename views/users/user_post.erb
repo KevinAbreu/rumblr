@@ -1,11 +1,8 @@
 
 
 <% if session[:user_id] %>
-
-
-
+  <%=@create.each do |i|%>
+  <p><%=@create%></p>
+  <%=i%>
+  <%=end%>
 <%end%>
-
-
-<%=@post.content%>
-<p>tcyv</p>

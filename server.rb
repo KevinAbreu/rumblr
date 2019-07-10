@@ -51,6 +51,7 @@ post '/login' do
     if @user.password == given_password
       p "user authenticated successfully"
       session[:user_id] = @user.id # setting the session id to the user id
+      
     else
       p "invalid password"
     end
@@ -60,7 +61,7 @@ end
 
 get "/user_post" do
   # @post = Post.find_by(content: params[:content])
-  @post= Post.find(2)
+  @create= Post.all
   erb :"users/user_post"
 end
 
