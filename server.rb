@@ -2,8 +2,14 @@ require "sinatra/activerecord"
 require "sinatra"
 
 #establishes connection to the database so SQLite can access it in the first place
-ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database:"./database.sqlite3")
-set :database, {adapter: "sqlite3", database: "./database.sqlite3"}
+# ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database:"./database.sqlite3")
+# set :database, {adapter: "sqlite3", database: "./database.sqlite3"}
+
+if ENV['RACK_ENV']
+  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+else
+  set :database, {adapter: "sqlite3", database: "database.sqlite3"}
+end
 enable :sessions #enables cookies
 
 #User inherits ActiveRecord to allow the user to access the information that they made
@@ -51,7 +57,7 @@ post '/login' do
     if @user.password == given_password
       p "user authenticated successfully"
       session[:user_id] = @user.id # setting the session id to the user id
-      
+
     else
       p "invalid password"
     end
