@@ -1,10 +1,12 @@
-
+<section style="width:33%;position:relative; left: 17vw; top:26vh; border-right: 5px solid #F8FFFE;">
+  <h1 class="roboto" style="font-size:7em; color:#F8FFFE; width:100%; display:list-item;">Dream Diary</h1>
+</section>
 
 <% if session[:user_id] %>
 
 <% @current_user = User.find_by(id: session[:user_id])%>
 <% @current_user.destroy%>
 
-<p>User <%=session[:user_id]%> was deleted</p>
+<h1 style="position: relative;left: 57vw;width: 30%;color:white;"class="roboto">User <%=session[:user_id]%> was deleted</h1>
 
 <%end%>

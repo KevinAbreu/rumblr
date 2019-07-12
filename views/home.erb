@@ -2,20 +2,23 @@
   <h1 class="roboto" style="font-size:7em; color:#F8FFFE; width:100%; display:list-item;">Dream Diary</h1>
 </section>
 <%if session[:user_id] %>
-<section>
+<section style="width:25%;position: relative;top: -21vh;left: 56vw;">
   <form action="/logout" method="post">
-    <input type="submit" name="Submit" value="Logout">
-  </form>
+    <input  class="form-control"type="submit" name="Submit" value="Logout">
+  </form><br>
   <form class="" action="/delete_user" method="post">
-    <input type="submit" name="" value="Delete Account">
+    <input class="form-control"type="submit" name="" value="Delete Account"><br>
+
+  <form class="" action="/user_post" method="post">
+      <!-- <input class="form-control"type="text" name="content" placeholder= "What is on your mind?"value=""><br> -->
+      <textarea style=""class="form-control" placeholder="What's on your mind?" name="content" rows="5" cols="30"></textarea>
+      <input class="form-control"type="submit" name="" value="Create Post">
+  </form>
 
   </form>
 </section>
 
-  <form class="" action="/user_post" method="post">
-    <input type="text" name="content" placeholder= "ENTER YOUR POST HERE"value="">
-    <input type="submit" name="" value="Create Post">
-  </form>
+
 <% else %>
     <section style="width: 22%; position:relative;left:55vw;top:1vh">
       <a class="monster mx-auto" style="font-size:2em; color:#F8FFFE; padding:10px;" href="login">Login</a>
