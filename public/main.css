@@ -1,8 +1,11 @@
 body{
-  background-color: #43514E;
+  background-color: #2d3735;
 }
-
-
+::placeholder {
+  color: black;
+  font-size: 13px;
+  
+}
 .closeit{
 
   width: 25vw;
@@ -14,7 +17,7 @@ body{
 
 .roboto{
   font-family: 'Roboto Slab', serif;
-  
+
 
 }
 

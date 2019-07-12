@@ -1,5 +1,8 @@
-<h1 class="roboto " style="font-size:7em; color:#F8FFFE; width:50%;position:relative; left: 27%; display:list-item; top:31vh;">Dream Diary</h1>
+<section style="width:33%;position:relative; left: 17vw; top:26vh; border-right: 5px solid #F8FFFE;">
+  <h1 class="roboto" style="font-size:7em; color:#F8FFFE; width:100%; display:list-item;">Dream Diary</h1>
+</section>
 <%if session[:user_id] %>
+<section>
   <form action="/logout" method="post">
     <input type="submit" name="Submit" value="Logout">
   </form>
@@ -7,14 +10,17 @@
     <input type="submit" name="" value="Delete Account">
 
   </form>
+</section>
 
   <form class="" action="/user_post" method="post">
     <input type="text" name="content" placeholder= "ENTER YOUR POST HERE"value="">
     <input type="submit" name="" value="Create Post">
   </form>
 <% else %>
-  <a class="monster mx-auto" style="font-size:2em; color:#F8FFFE; padding:10px;" href="login">Login</a>
-  <a class="monster mx-auto" style="font-size:2em; color:#F8FFFE; padding:10px;" href="signup">Sign up</a>
+    <section style="width: 22%; position:relative;left:55vw;top:1vh">
+      <a class="monster mx-auto" style="font-size:2em; color:#F8FFFE; padding:10px;" href="login">Login</a>
+      <a class="monster mx-auto" style="font-size:2em; color:#F8FFFE; padding:10px;" href="signup">Sign up</a>
+    </section>
 <% end %>
 <%= session[:user_id] %>
 
