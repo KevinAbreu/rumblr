@@ -1,3 +1,8 @@
+body{
+  background-color: #43514E;
+}
+
+
 .closeit{
 
   width: 25vw;
@@ -5,4 +10,20 @@
   /* position: relative;
   left: 33vw;
   top: 40vh; */
+}
+
+.roboto{
+  font-family: 'Roboto Slab', serif;
+  
+
+}
+
+.monster{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.placeholder{
+    position: relative;
+    margin-left: 35%;
+    margin-top: 17%;
 }

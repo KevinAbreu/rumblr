@@ -1,4 +1,4 @@
-<h1>Welcome to Dream Diary</h1>
+<h1 class="roboto " style="font-size:7em; color:#F8FFFE; width:50%;position:relative; left: 27%; display:list-item; top:31vh;">Dream Diary</h1>
 <%if session[:user_id] %>
   <form action="/logout" method="post">
     <input type="submit" name="Submit" value="Logout">
@@ -13,8 +13,8 @@
     <input type="submit" name="" value="Create Post">
   </form>
 <% else %>
-  <a href="login">Login</a>
-  <a href="signup">Sign up</a>
+  <a class="monster mx-auto" style="font-size:2em; color:#F8FFFE; padding:10px;" href="login">Login</a>
+  <a class="monster mx-auto" style="font-size:2em; color:#F8FFFE; padding:10px;" href="signup">Sign up</a>
 <% end %>
 <%= session[:user_id] %>
 

@@ -1,5 +1,6 @@
 require "sinatra/activerecord"
 require "sinatra"
+require "sqlite3"
 
 #establishes connection to the database so SQLite can access it in the first place
 # ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database:"./database.sqlite3")
